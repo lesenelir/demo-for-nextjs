@@ -12,7 +12,6 @@ interface IProps {
 
 function Posts(props: IProps[]) {
   const {posts} = props
-  console.log(posts)
 
   return (
     <div className={styles.box}>
