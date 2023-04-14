@@ -1,4 +1,4 @@
-import styles from '../styles/about.module.css'
+import styles from '../../styles/about.module.css'
 
 // localhost:3000/about  --->  file-based routing
 function About() {
