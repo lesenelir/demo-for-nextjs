@@ -20,6 +20,7 @@ export default function Home() {
         <ul>
           <li><Link href={'/posts'}>Posts Page</Link></li>
           <li><Link href={'/about'}>About Page</Link></li>
+          <li><Link href={'/products'}>Products Page</Link></li>
         </ul>
       </main>
     </>
