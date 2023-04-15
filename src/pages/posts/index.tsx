@@ -27,7 +27,7 @@ function Posts(props: IProps[]) {
 
 export default Posts
 
-
+// This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
   // simulate request
   const posts = await getContent()
