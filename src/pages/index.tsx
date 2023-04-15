@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from "next/link"
 
 import styles from '@/styles/home.module.css'
 
@@ -14,6 +15,12 @@ export default function Home() {
 
       <main className={styles.main}>
         Hello world.
+        <br/>
+
+        <ul>
+          <li><Link href={'/posts'}>Posts Page</Link></li>
+          <li><Link href={'/about'}>About Page</Link></li>
+        </ul>
       </main>
     </>
   )

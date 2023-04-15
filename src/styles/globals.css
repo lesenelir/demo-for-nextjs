@@ -23,10 +23,10 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(255, 255, 255)) rgb(221, 226, 227);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/*a {*/
+/*  color: inherit;*/
+/*  text-decoration: none;*/
+/*}*/
 
 /*!* 媒体查询 - 根据 *!*/
 /*!*@media (prefers-color-scheme: dark) {*!*/

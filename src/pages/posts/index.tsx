@@ -1,6 +1,7 @@
 /**
  *  Static Generation Demo
  */
+import Link from "next/link"
 import {GetStaticProps} from "next"
 
 import styles from '../../styles/posts.module.css'
@@ -19,7 +20,8 @@ function Posts(props: IProps[]) {
       <br/>
 
       <ul>
-        {posts.map(post => <li key={post.id}>{post.title}</li>)}
+        {/*{posts.map(post => <li key={post.id}>{post.title}</li>)}*/}
+        {posts.map(post => <li key={post.id}><Link href={`/posts/${post.id}`}>{post.title}</Link></li>)}
       </ul>
     </div>
   )

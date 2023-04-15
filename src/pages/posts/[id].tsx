@@ -4,6 +4,7 @@
  *  /posts/1  {id: '1'}
  *  /posts/2  {id: '2'}
  */
+import RouterButton from "@/components/utils/RouterButton"
 import {NextRouter, useRouter} from "next/router"
 
 import styles from '../../styles/post.module.css'
@@ -16,6 +17,7 @@ function Post() {
     <div className={styles.box}>
       <h2>Post Page</h2>
       <p>Path: {router.query.id}</p>
+      <RouterButton/>
     </div>
   )
 }
