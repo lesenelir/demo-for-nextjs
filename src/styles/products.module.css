@@ -5,3 +5,20 @@
   align-items: center;
   min-height: 100vh;
 }
+
+.card {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ADD8E680;
+  border: 1px solid #696969;
+}
+
+.imageUl {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
