@@ -1,3 +1,5 @@
+/* CSS Module 是 组件级别CSS */
+/* CSS Module 局部CSS，来自动创建独一无二的类名 */
 .main {
   display: flex;
   flex-direction: column;
