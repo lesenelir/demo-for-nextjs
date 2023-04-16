@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import styles from '@/styles/home.module.css'
 
-export default function Home() {
+function Home() {
   return (
     <>
       <Head>
@@ -26,3 +26,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

@@ -12,25 +12,6 @@ interface IProps {
   title: string
 }
 
-function Posts(props: IProps[]) {
-  const {posts} = props
-
-  return (
-    <div className={styles.box}>
-      Post Page.
-      <br/>
-
-      <ul>
-        {/*{posts.map(post => <li key={post.id}>{post.title}</li>)}*/}
-        {posts.map(post => <li key={post.id}><Link href={`/posts/${post.id}`}>{post.title}</Link></li>)}
-      </ul>
-      <RouterButton/>
-    </div>
-  )
-}
-
-export default Posts
-
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
   // simulate request
@@ -57,3 +38,22 @@ function getContent() {
     }, 1000)
   })
 }
+
+function Posts(props: IProps[]) {
+  const {posts} = props
+
+  return (
+    <div className={styles.box}>
+      Post Page.
+      <br/>
+
+      <ul>
+        {/*{posts.map(post => <li key={post.id}>{post.title}</li>)}*/}
+        {posts.map(post => <li key={post.id}><Link href={`/posts/${post.id}`}>{post.title}</Link></li>)}
+      </ul>
+      <RouterButton/>
+    </div>
+  )
+}
+
+export default Posts
