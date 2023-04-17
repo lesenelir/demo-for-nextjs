@@ -2,8 +2,8 @@
  *  Static Generation Demo
  */
 import Link from "next/link"
-import RouterButton from "@/components/utils/RouterButton"
 import {GetStaticProps} from "next"
+import RouterButton from "@/components/utils/RouterButton"
 
 import styles from '../../styles/posts.module.css'
 

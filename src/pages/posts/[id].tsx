@@ -9,9 +9,9 @@
  */
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import RouterButton from "@/components/utils/RouterButton"
 import {NextRouter, useRouter} from "next/router"
 import {GetStaticPaths, GetStaticProps} from "next"
+import RouterButton from "@/components/utils/RouterButton"
 
 import styles from '../../styles/post.module.css'
 

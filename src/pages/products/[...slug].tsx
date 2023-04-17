@@ -1,8 +1,8 @@
 /**
  *  Server Side Rendering SSR + Multi-layer Dynamic Routing
  */
-import RouterButton from "@/components/utils/RouterButton"
 import {GetServerSideProps} from "next"
+import RouterButton from "@/components/utils/RouterButton"
 
 import styles from '../../styles/products.module.css'
 
