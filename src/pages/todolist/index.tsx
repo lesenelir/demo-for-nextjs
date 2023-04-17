@@ -1,5 +1,6 @@
 import AddTodo from "@/components/todo/AddTodo"
 import TodoList from "@/components/todo/TodoList"
+import RouterButton from "@/components/utils/RouterButton"
 import {useState} from "react"
 
 import styles from '../../styles/todolist.module.css'
@@ -22,6 +23,8 @@ function TodolistApp() {
 
       <AddTodo todos={todos} setTodos={setTodos}/>
       <TodoList todos={todos} setTodos={setTodos}/>
+
+      <RouterButton/>
     </div>
   )
 }
