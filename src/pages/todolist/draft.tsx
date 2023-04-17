@@ -1,10 +1,10 @@
-import {useState} from "react"
+import {ChangeEvent, useState} from "react"
 
 import styles from '../../styles/todolist.module.css'
 
 function TodolistAll() {
   const [todo, setTodo] = useState<string>('')
-  const [todos, setTodos] = useState<Array<string>>([])
+  const [todos, setTodos] = useState<string[]>([])
   const [isEdit, setIsEdit] = useState<boolean>(false)
 
   const handleAddTodo = () => {
@@ -12,7 +12,7 @@ function TodolistAll() {
     setTodo('')
   }
 
-  const handleDelete = (currentTodo) => {
+  const handleDelete = (currentTodo: string) => {
     const newTodos = todos.filter(item => item !== currentTodo)
     setTodos(newTodos)
   }
@@ -21,8 +21,8 @@ function TodolistAll() {
     setIsEdit(!isEdit)
   }
 
-  const handleEditInput = (e, currentTodo) => {
-    // 其他元素保持不变，当前元素为e.target.value
+  const handleEditInput = (e: ChangeEvent<HTMLInputElement>, currentTodo: string) => {
+    // 其他元素保持不变，当前元素值更新
     const newValue = e.target.value
     const newTodos = todos.map(todo => todo !== currentTodo ? todo : newValue)
     setTodos(newTodos)
@@ -40,13 +40,12 @@ function TodolistAll() {
       {
         todos.map(item => (
           <div key={item}>
-            {!isEdit ? item : <input type="text" value={item} onChange={(e) => handleEditInput(e, item)} />} {' '}
+            {!isEdit ? item : <input type="text" value={item} onChange={(e) => handleEditInput(e, item)}/>} {' '}
             <button onClick={handleEdit}>{!isEdit ? 'Edit' : 'Save'}</button> {' '}
             <button onClick={() => handleDelete(item)}>Delete</button>
           </div>
         ))
       }
-
     </div>
   )
 }
