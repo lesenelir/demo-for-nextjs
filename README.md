@@ -42,4 +42,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Alternative Layout 
 1. create an alternative layout component
 2. use alternative layout component in one of the page
-3. 
+3. modify the code in _app.js
