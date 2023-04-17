@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from "next/link"
 
-import styles from '@/styles/home.module.css'
+import styles from '../styles/home.module.css'
 
 function Home() {
   return (
