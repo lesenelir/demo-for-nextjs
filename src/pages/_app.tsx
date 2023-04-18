@@ -1,11 +1,15 @@
 import type {AppProps} from 'next/app'
 import {NextPage} from "next"
+import {Inter} from "next/font/google"
 import React, {ReactElement, ReactNode} from "react"
 import Layout from "@/components/layout/Layout"
 
 // Next.js support import css file from node_modules.
 // import 'bootstrap/dist/css/bootstrap.css'
 import '@/styles/globals.css'
+
+// In order to use optimal font in all pages, put variable fonts in _app.tsx.
+const inter = Inter({subsets: ['latin']})
 
 
 // export default function App({Component, pageProps}: AppProps) {
@@ -32,7 +36,7 @@ function App({Component, pageProps}: AppPropsWithLayout) {
     return <Layout>{page}</Layout>
   }
 
-  return renderWithLayout(<Component {...pageProps}/>)
+  return renderWithLayout(<Component {...pageProps} className={inter.className}/>)
 }
 
 export default App
