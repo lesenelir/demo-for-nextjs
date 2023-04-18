@@ -47,6 +47,7 @@ function Home(props: IProps) {
         <br/>
 
         <ul>
+          {/* The Link component is provided to do the client-side route transition. */}
           <li><Link href={'/posts'}>Posts Page</Link></li>
           <li><Link href={'/about'}>About Page</Link></li>
           <li><Link href={'/products/1'}>Products Page</Link></li>

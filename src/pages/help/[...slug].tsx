@@ -1,6 +1,9 @@
 /**
  * Multi-layer Dynamic Route
  *
+ *  [...slug] 不捕获 /help
+ *  [[...slug]] 可以包括/help
+ *
  * /help/when/what/1          {slug: ['when', 'what', '1']}
  * /help/web/dev/react/2      {slug: ['web', 'dev', 'react', '2']}
  */
