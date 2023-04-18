@@ -1,9 +1,36 @@
 import Head from 'next/head'
 import Link from "next/link"
+import {GetStaticProps} from "next"
 
 import styles from '../styles/home.module.css'
 
-function Home() {
+interface IData {
+  host: string,
+  user: string,
+  pass: string
+}
+
+interface IProps {
+  data: IData
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = {
+    host: process.env.DB_HOST,
+    user:process.env.DB_USER,
+    pass: process.env.DB_PASS
+  }
+
+  return {
+    props: {
+      data
+    }
+  }
+}
+
+function Home(props: IProps) {
+  const {data} = props
+
   return (
     <>
       <Head>
@@ -14,7 +41,9 @@ function Home() {
       </Head>
 
       <main className={styles.main}>
-        Hello world.
+        <h4>Hello Next.js</h4>
+        <p>Data from environment variables: </p>
+        <p>{data.host} - {data.user} - {data.pass}</p>
         <br/>
 
         <ul>
