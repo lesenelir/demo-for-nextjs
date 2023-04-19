@@ -13,8 +13,6 @@ interface IPost {
 
 const allPosts: IPost[] = [...mock.posts]
 
-console.log(allPosts)
-
 // RESTFUL API
 export default function handler(
   req: NextApiRequest,
