@@ -16,7 +16,7 @@ const allPosts: IPost[] = [...mock.posts]
 // RESTFUL API
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
   // console.log(req, req.method, req.query, req.body)
 

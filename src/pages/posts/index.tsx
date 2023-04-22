@@ -7,7 +7,7 @@ import RouterButton from "@/components/utils/RouterButton"
 
 import styles from '../../styles/posts.module.css'
 
-interface IProps {
+interface IPost {
   id: number,
   title: string
 }
@@ -39,7 +39,7 @@ function getContent() {
   })
 }
 
-function Posts(props: IProps[]) {
+function Posts(props: {posts: IPost[]}) {
   const {posts} = props
 
   return (

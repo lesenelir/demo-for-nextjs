@@ -36,8 +36,8 @@ async function getData() {
 // which pages should appear
 export const getStaticPaths: GetStaticPaths = async () => {
   // get All possible URLs:
-  const data = await getData()
-  const pathsWithParams = []
+  const data: {posts: IPost[]} = await getData()
+  const pathsWithParams: any[] = []
   data.posts.map(item => pathsWithParams.push({params: {id: item.id}}))
 
   // The return paths array indicate the dynamic routing url
@@ -61,9 +61,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const {params} = context
-  const postId = params.id
+  const postId = params?.id
 
-  const data = await getData()
+  const data: {posts: IPost[]} = await getData()
   const post = data.posts.find(item => item.id === postId)
 
   // fallback === true时，没有找到则渲染一个页面
