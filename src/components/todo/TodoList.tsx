@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {ChangeEvent, useState} from "react"
 
 interface ITodo {
   id: string,
@@ -19,7 +19,7 @@ function TodoList(props: IProps) {
     setTodos(newTodosData)
   }
 
-  const handleChange = (e, currentTodo: ITodo) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, currentTodo: ITodo) => {
     // 其他元素保持不变，当前元素为e.target.value
     const newValue = {id: String(new Date().getTime()), text: e.target.value}
     const newTodosData = todos.map(item => item.id !== currentTodo.id ? item : newValue)
