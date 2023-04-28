@@ -54,6 +54,7 @@ function Home(props: IProps) {
           <li><Link href={'/todolist'}>TodoList Page</Link></li>
           <li><Link href={'/alternativeLayout'}>AlternativeLayout Page</Link></li>
           <li><Link href={'/client'}>Client Side Page</Link></li>
+          <li><Link href={'/books'}>Books Page</Link></li>
         </ul>
       </main>
     </>
