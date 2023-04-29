@@ -1,10 +1,8 @@
 import {NextApiRequest} from "next"
 import jwt from "jsonwebtoken"
 import {prisma} from "@/utils/server"
-import {IncomingMessage} from "http";
-import {NextApiRequestCookies} from "next/dist/server/api-utils";
 
-export const getUserFromRequest = async (req: IncomingMessage & {cookies: NextApiRequestCookies}) => {
+export const getUserFromRequest = async (req: NextApiRequest) => {
   try {
     const token = req.cookies['token']
     // verify token
