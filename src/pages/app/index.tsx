@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import styles from '../../styles/app.module.css'
 
 function Login() {
@@ -38,8 +40,17 @@ function MyApp() {
       <h1>Login</h1>
       <Login/>
       <hr/>
+
       <h2>Register</h2>
       <Register/>
+      <hr/>
+
+      <h2>Link List</h2>
+      <ul>
+        <li><Link href={'/app/register'}>Register Page</Link></li>
+      </ul>
+      <hr/>
+
     </div>
   )
 }
