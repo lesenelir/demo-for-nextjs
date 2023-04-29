@@ -1,5 +1,6 @@
 import {getUserFromRequest} from "@/utils/verify"
 import {GetServerSideProps, GetServerSidePropsContext} from "next"
+import Link from "next/link"
 
 import styles from '../../../styles/app.module.css'
 
@@ -15,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSideP
     return {
       redirect: {
         permanent: false,
-        destination: '/login'
+        destination: '/app/login' // 类似于路由守卫，如果没有找到user，则即使知道url，也不能访问，跳转回来
       }
     }
   }
@@ -36,6 +37,10 @@ function UserPage(props: IProps) {
   return (
     <div className={styles.box}>
       <h2>Hello, {user.name}</h2>
+
+      <div>
+        <Link href={'/api/logout'}>Logout</Link>
+      </div>
     </div>
   )
 }
