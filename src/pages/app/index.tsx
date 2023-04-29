@@ -48,6 +48,7 @@ function MyApp() {
       <h2>Link List</h2>
       <ul>
         <li><Link href={'/app/register'}>Register Page</Link></li>
+        <li><Link href={'/app/login'}>Login Page</Link></li>
       </ul>
       <hr/>
 
