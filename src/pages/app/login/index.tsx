@@ -1,6 +1,7 @@
 import {ChangeEvent, useState} from "react"
 import {useMutation, UseMutationResult} from "react-query"
 import axios, {AxiosError, AxiosResponse} from "axios"
+import {NextRouter, useRouter} from "next/router"
 import RouterButton from "@/components/utils/RouterButton"
 
 import styles from '../../../styles/app.module.css'
@@ -21,8 +22,13 @@ async function login({username, password}: {username: string, password: string})
 function LoginPage() {
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const router: NextRouter = useRouter()
   const loginMutation: UseMutationResult<AxiosResponse<LoginResponse>,
-    AxiosError, {username: string, password: string}> = useMutation(login)
+    AxiosError, {username: string, password: string}> = useMutation(login, {
+      onSuccess() {
+        router.push('/app/user').then(r => console.log(r))
+      }
+  })
 
   const handlerUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value)
