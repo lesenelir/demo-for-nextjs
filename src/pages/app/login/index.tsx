@@ -15,7 +15,6 @@ async function login({username, password}: {username: string, password: string})
     username,
     password
   })
-  console.log(res.data)
   return res.data
 }
 
@@ -41,9 +40,9 @@ function LoginPage() {
     <>
       <div className={styles.box}>
         <h2>Login Page:</h2>
-        {(loginMutation.error?.response?.data as LoginResponse).message && (
-          <div style={{color: 'red'}}>{(loginMutation?.error?.response?.data as LoginResponse).message}</div>
-        )}
+        {/*{loginMutation.error?.response?.data.message && (*/}
+        {/*  <div style={{color: 'red'}}>{(loginMutation.error.response.data as LoginResponse).message}</div>*/}
+        {/*)}*/}
         <label htmlFor="username">Username:</label>
         <input type="text" id='username' value={username} onChange={handlerUsernameChange}/>
 

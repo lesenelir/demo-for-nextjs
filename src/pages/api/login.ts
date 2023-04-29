@@ -4,6 +4,8 @@ import {NextApiRequest, NextApiResponse} from "next"
 import nc from 'next-connect'
 import bcrypt from "bcrypt"
 
+console.log(process.env.JWT_SECRET)
+
 const prisma = new PrismaClient()
 
 const handler = nc<NextApiRequest, NextApiResponse>()
