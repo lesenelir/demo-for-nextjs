@@ -1,5 +1,5 @@
 import {getUserFromRequest} from "@/utils/verify"
-import {GetServerSideProps, GetServerSidePropsContext} from "next"
+import {GetServerSideProps, GetServerSidePropsContext, NextApiRequest} from "next"
 import Link from "next/link"
 
 import styles from '../../../styles/app.module.css'
@@ -11,7 +11,9 @@ interface IProps {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
-  const user = await getUserFromRequest(ctx.req)
+  const req = ctx.req as NextApiRequest & {cookie: Partial<{[key: string]: string}>}
+
+  const user = await getUserFromRequest(req) // 含有cookie的请求
   if (!user) {
     return {
       redirect: {
